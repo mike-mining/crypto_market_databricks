@@ -22,7 +22,7 @@ SILVER_TABLE: Final[str] = f"{CATALOG}.{SILVER_SCHEMA}.market_data"
 GOLD_TABLE: Final[str] = f"{CATALOG}.{GOLD_SCHEMA}.daily_ohlcv"
 
 # ---------------------------------------------------------------------------
-# External storage (ADLS Gen2 / S3 external location registered in UC)
+# External storage (ADLS Gen2 / S3 external location)
 # ---------------------------------------------------------------------------
 EXTERNAL_LOCATION: Final[str] = "abfss://crypto@<storage_account>.dfs.core.windows.net"
 
