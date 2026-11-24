@@ -1,0 +1,32 @@
+# ---------------------------------------------------------------------------
+# Crypto Medallion Pipeline — Python Dependencies
+# ---------------------------------------------------------------------------
+# Databricks Runtime (DBR 14.3+) pre-installs PySpark, Delta Lake, and
+# delta-spark. Only list packages NOT bundled with DBR.
+#
+# For local development / CI, install the full list.
+# On Databricks clusters, install only the non-DBR packages via:
+#   - Cluster Libraries UI
+#   - init_script
+#   - %pip install in a notebook bootstrap cell
+# ---------------------------------------------------------------------------
+
+# HTTP client for CoinGecko API
+requests>=2.31.0,<3.0.0
+
+# Airflow + Databricks provider (Airflow worker / CI only — not on Spark cluster)
+apache-airflow>=2.8.0,<3.0.0
+apache-airflow-providers-databricks>=6.0.0,<7.0.0
+
+# Delta Lake (local Spark dev only — DBR includes delta-spark natively)
+delta-spark==3.1.0
+
+# PySpark (local dev only — DBR provides the cluster-native version)
+pyspark==3.5.1
+
+# ---------------------------------------------------------------------------
+# Development & testing
+# ---------------------------------------------------------------------------
+pytest>=8.0.0
+pytest-mock>=3.14.0
+chispa>=0.9.4          # DataFrame equality assertions for PySpark unit tests
